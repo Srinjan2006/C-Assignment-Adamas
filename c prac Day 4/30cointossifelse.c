@@ -12,5 +12,6 @@ int main()
 	{
 		printf("Tails,captain lost the toss");
 	}
+	else printf("Invalid Input");
 	return 0;
 }
