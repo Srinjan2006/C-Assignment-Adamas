@@ -1,19 +1,26 @@
 #include <stdio.h>
+int main()
+{
+    printf("-----------------------------------\n");
+    int second, minute = 0, hour = 0;
+    printf("Enter the time in in second: ");
+    scanf("%d",&second);
+    printf("-----------------------------------\n");
 
-int main() {
-    int total_seconds, h, m, s, r;
-
-    printf("Enter total number of seconds: ");
-    scanf("%d", &total_seconds);
-    if (total_seconds < 0) {
-        printf("Seconds cannot be negative.\n");
-    } else {
-        h = total_seconds / 3600;
-        r = total_seconds % 3600;
-        m = r / 60;
-        s = r % 60;
-        printf("Time: %d Hours, %d Minutes, %d Seconds\n", h, m, s);
+    if(second > 3600)
+    {
+        hour = second % 3600;
+        second /= 3600;
     }
+    else if(second > 60 && second <= 3600)
+    {
+        minute = second % 60;
+        second /= 60;
+    }
+    else 
+        printf("Invalid Input!")
 
-    return 0;
+    printf("The time in year, month and day is\n");
+    printf("hour : minute : second\n%d:%d:%d",hour,minute,second);
+    printf("\n-----------------------------------\n");
 }
