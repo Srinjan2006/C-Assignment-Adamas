@@ -1,19 +1,30 @@
+//WACP to calculate the age of person in years, months and days and the input will be given in days
 #include <stdio.h>
-
-int main() {
-    int total_days, y, m, d, r;
-
-    printf("Enter total number of days: ");
-    scanf("%d", &total_days);
-    if (total_days < 0) {
-        printf("Days cannot be negative.\n");
-    } else {
-        y = total_days / 365;
-        r = total_days % 365;
-		m = r/ 30;
-        d = r % 30;
-		printf("Age: %d Years, %d Months, %d Days\n", y,m,d);
+int main()
+{
+    int day, month = 0, year = 0;
+    printf("-----------------------------------\n");
+    printf("Enter your age in days: ");
+    scanf("%d",&day);
+    printf("-----------------------------------\n");
+    
+    if(day > 365)
+    {
+        year = day / 365;
+        day %= 365; 
     }
+    else if(day <= 365)
+    {
+        month = day / 365;
+        day %= 365;
+    }
+    else
+        printf("Invalid Input!");
 
+    printf("The age of the person in year, month and day is\n");
+    printf("%d year, %d month %d day ",year, month, day);
+    printf("\n-----------------------------------\n");
+    
     return 0;
+
 }
