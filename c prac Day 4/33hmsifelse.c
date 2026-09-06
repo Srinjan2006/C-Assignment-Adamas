@@ -19,7 +19,7 @@ int main()
 	else
 	    printf("Invalid input !");
 
-    printf("The time in year, month and day is\n");
+    printf("The time in hour, minute and second is\n");
     printf("hour : minute : second\n%d:%d:%d",hour,minute,second);
 
     return 0;
